@@ -8,26 +8,37 @@
 </head>
 <body>
     <header>Blackjack</header>
-    <div class="start">
-        <button type="button">Start</button>
-    </div>
-    <div class="hit-button">
-        <button type="button">Hit</button>
-    </div>
-    <div class="stand-button">
-        <button type="button">Stand</button>
-    </div>
-    <div class="card">
+    <start-screen>
+        <bet-screen>
+            <p>You have <span id="player-money-total"> money</p>
+            <p>How much would you like to bet?</p>
+            <input type="text">
+            <button>Play</button>
+        </bet-screen>
+    </start-screen>
+    <start-button>
+        <button id="start">Start</button>
+    </start-button>
+    <hit-button>
+        <button id="hit">Hit</button>
+    </hit-button>
+    <stand-button>
+        <button id="stand">Stand</button>
+    </stand-button>
+    <card-display>
         <image alt="card" src=""></image>
-    </div>
-    <div class="deck">
+    </card-display>
+    <deck-display>
         <image alt="deck" src=""></image>
-    </div>
-    <div class="bet-screen">
-        <p>You have getTotal() money</p>
-        <p>How much would you like to bet?</p>
-        <input type="text">
-        <button>Play</button>
-    </div>
+    </deck-display>
+    <player-total>
+        <p id="player-total"></p>
+    </player-total>
+    <sum-container>
+        <p id="player-sum"></p>
+    </sum-container>
+    <sum-container>
+        <p id="dealer-sum"></p>
+    </sum-container>
 </body>
 </html>
