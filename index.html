@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlackJack Team Black</title>
+    <title>Blackjack Team Black</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -12,19 +12,29 @@
         <bet-screen>
             <p>You have <span id="player-money-total"></span> money</p>
             <p>How much would you like to bet?</p>
-            <input type="text">
-            <button>Play</button>
+            <input type="text" id="bet-amount">
+            <button-container>
+                <button id="play">Play</button>
+                <button-background></button-background>
+            </button-container>
         </bet-screen>
     </start-screen>
-    <start-button>
-        <button id="start">Start</button>
-    </start-button>
-    <hit-button>
-        <button id="hit">Hit</button>
-    </hit-button>
-    <stand-button>
-        <button id="stand">Stand</button>
-    </stand-button>
+    <button-container>
+        <start-button>
+            <button id="start">Start</button>
+            <button-background></button-background>
+        </start-button>
+        <player-actions>
+            <hit-button>
+                <button id="hit">Hit</button>
+                <button-background></button-background>
+            </hit-button>
+            <stand-button>
+                <button id="stand">Stand</button>
+                <button-background></button-background>
+            </stand-button>
+        </player-actions>
+    </button-container>
     <card-display>
         <img alt="card" src="">
     </card-display>
@@ -36,8 +46,6 @@
     </player-total>
     <sum-container>
         <p id="player-sum"></p>
-    </sum-container>
-    <sum-container>
         <p id="dealer-sum"></p>
     </sum-container>
 </body>
