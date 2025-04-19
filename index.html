@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack Team Black</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <header>Blackjack</header>
-    <start-screen>
-        <bet-screen>
-            <p>You have <span id="player-money-total"></span> money</p>
-            <p>How much would you like to bet?</p>
-            <input type="text" id="bet-amount">
-            <button-container>
-                <button id="play">Play</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blackjack Team Black</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <header>Blackjack</header>
+        <start-screen>
+            <bet-screen>
+                <p>You have <span id="player-money-total"></span> money</p>
+                <p>How much would you like to bet?</p>
+                <input type="text" id="bet-amount">
+                <button-container>
+                    <play-button>
+                        <button-background></button-background>
+                        <button id="play">Play</button>
+                    </play-button>
+                </button-container>
+            </bet-screen>
+        </start-screen>
+        <button-container>
+            <start-button>
                 <button-background></button-background>
-            </button-container>
-        </bet-screen>
-    </start-screen>
-    <button-container>
-        <start-button>
-            <button id="start">Start</button>
-            <button-background></button-background>
-        </start-button>
+                <button id="start-button">Start</button>
+            </start-button>
+        </button-container>
         <player-actions>
-            <hit-button>
-                <button id="hit">Hit</button>
-                <button-background></button-background>
-            </hit-button>
-            <stand-button>
-                <button id="stand">Stand</button>
-                <button-background></button-background>
-            </stand-button>
+            <button-container>
+                <hit-button>
+                    <button-background></button-background>
+                    <button id="hit">Hit</button>
+                </hit-button>
+            </button-container>
+            <button-container>
+                <stand-button>
+                    <button-background></button-background>
+                    <button id="stand">Stand</button>
+                </stand-button>
+            </button-container>
         </player-actions>
-    </button-container>
-    <card-display>
-        <img alt="card" src="">
-    </card-display>
-    <deck-display>
-        <img alt="deck" src="">
-    </deck-display>
-    <player-total>
-        <p id="player-total"></p>
-    </player-total>
-    <sum-container>
-        <p id="player-sum"></p>
-        <p id="dealer-sum"></p>
-    </sum-container>
-</body>
+        <card-display>
+            <img alt="card" src="">
+        </card-display>
+        <deck-display>
+            <img alt="deck" src="">
+        </deck-display>
+        <player-total>
+            <p id="player-total"></p>
+        </player-total>
+        <sum-container>
+            <p id="player-sum"></p>
+            <p id="dealer-sum"></p>
+        </sum-container>
+    </body>
 </html>
