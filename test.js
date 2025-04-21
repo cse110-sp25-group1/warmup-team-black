@@ -8,15 +8,19 @@ let playerSum = 0;
 let dealerAceCount = 0;
 let playerAceCount = 0;
 let canHit = true;
+let playerMoney = 100;
+let currentBet = 0;
 
 // presets
 window.onload = function () {
   buildDeck();
   shuffleDeck();
+  updateTotals();
 
   document.getElementById("start-button").addEventListener("click", startGame);
   document.getElementById("hit-button").addEventListener("click", hit);
   document.getElementById("stand-button").addEventListener("click", stand);
+  document.getElementById("play").addEventListener("click", placeBet);
 };
 
 function buildDeck() {
@@ -146,12 +150,43 @@ function reduceAce(sum, aceCount) {
   return sum;
 }
 
-function updateTotals() {
-  document.getElementById("player-money").innerText = 100;
+function placeBet() {
+  const betInput = document.getElementById("bet-amount");
+  const betAmount = parseInt(betInput.value);
+  
+  if (isNaN(betAmount) || betAmount <= 0) {
+    alert("Please enter a valid bet amount");
+    return;
+  }
+  
+  if (betAmount > playerMoney) {
+    alert("You don't have enough money for that bet");
+    return;
+  }
+  
+  currentBet = betAmount;
+  playerMoney -= betAmount;
+  updateTotals();
+  startGame();
 }
 
 function showResult(message) {
-  setTimeout(() => alert(message), 200);
+  setTimeout(() => {
+    alert(message);
+    if (message.includes("You win") || message.includes("Dealer busted")) {
+      playerMoney += currentBet * 2;
+    } else if (message.includes("It's a tie")) {
+      playerMoney += currentBet;
+    }
+    currentBet = 0;
+    updateTotals();
+  }, 200);
+}
+
+function updateTotals() {
+  document.getElementById("player-money").innerText = playerMoney;
+  document.getElementById("player-sum").innerText = `Player: ${reduceAce(playerSum, playerAceCount)}`;
+  document.getElementById("dealer-sum").innerText = `Dealer: ${reduceAce(dealerSum, dealerAceCount)}`;
 }
 
 // This works

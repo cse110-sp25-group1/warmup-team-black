@@ -10,7 +10,7 @@
         <header>Blackjack</header>
         <main>
             <div class="bet-screen">
-                <p>You have <span id="player-money-total"></span> money</p>
+                <p>You have <span id="player-money">100</span> money</p>
                 <p>How much would you like to bet?</p>
                 <input type="text" id="bet-amount">
                 <div class="button-container">
@@ -33,18 +33,12 @@
                 <button id="stand-button">Stand</button>
             </div>
         </div>
-        <div id="card-display">
-            <img alt="card" src="">
-        </div>
-        <div id="deck-display">
-            <img alt="deck" src="">
-        </div>
-        <div id="player-total">
-            <p id="player-total"></p>
-        </div>
+        <div id="dealer-cards"></div>
+        <div id="player-cards"></div>
         <div class="sum-container">
             <p id="player-sum"></p>
             <p id="dealer-sum"></p>
         </div>
+        <script src="test.js"></script>
     </body>
 </html>
