@@ -1,4 +1,47 @@
+<!-- Revised HTML -->
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="/test.css" />
+</head>
+<body>
+  <h1 class="title">Blackjack</h1>
+
+  <div class="center-ui">
+    <p>You have <span id="player-money">100</span> money</p>
+    <p>How much would you like to bet?</p>
+    <input type="text" id="bet-input" />
+    <button id="play-button">Play</button>
+    <button id="start-button">Start</button>
+  </div>
+
+  <div class="controls">
+    <button id="hit-button">Hit</button>
+    <button id="stand-button">Stand</button>
+  </div>
+
+  <div class="game-area">
+    <div class="dealer-section">
+      <h2>Dealer:</h2>
+      <div id="dealer-cards" class="card-row">
+        <img id="hidden-card" src="./cards/BACK.png" alt="Hidden card" />
+      </div>
+    </div>
+
+    <div class="player-section">
+      <h2>You:</h2>
+      <div id="player-cards" class="card-row"></div>
+    </div>
+  </div>
+
+  <script src="/test.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -47,4 +90,4 @@
             <p id="dealer-sum"></p>
         </div>
     </body>
-</html>
+</html> -->
